@@ -1,0 +1,24 @@
+dis:
+  - name: db
+    ds:
+      - dc:
+          - url: jdbc:mysql://swan.site:3306/db0
+            master: true
+            user: root
+          - url: jdbc:mysql://swan.site:3306/db1
+            master: true
+            user: test
+      - dc:
+          - url: jdbc:mysql://swan.site:3306/db0
+            master: true
+            user: root
+          - url: jdbc:mysql://swan.site:3306/db1
+            master: true
+            user: test
+users:
+  - name: db-root
+    postfix: ?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
+    password: root
+  - name: db-test
+    postfix: name=test
+    password: root
