@@ -1,0 +1,5 @@
+rootProject.name = 'lark-framework'
+include 'lark'
+include 'lark-test'
+include 'lark-web'
+

@@ -35,6 +35,10 @@ lombok.config
 
 # 自动生成相关类型，自动生成类型的代码请单独建项目，放在special文件文件夹。且不要加入hsy-catering模组
 
-.gitignore
 /.project
 /.settings/
+
+.gradle
+.gradle/*
+local.properties
+/gradle-plugins/gradle*
