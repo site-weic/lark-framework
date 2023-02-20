@@ -1,19 +1,25 @@
 plugins {
     id 'java'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
-group 'site.weic'
-version 'dev/v0.2-SNAPSHOT'
+apply from: '../config.gradle'
+
+group LarkGroup
+version LarkVersion
 
 repositories {
+    maven { url 'https://maven.aliyun.com/repository/public' }
     mavenCentral()
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation project(':lark')
 }
 
-test {
-    useJUnitPlatform()
+dependencyManagement {
+    imports {
+        mavenBom SpringBootParentDependency
+    }
 }

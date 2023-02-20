@@ -1,19 +1,17 @@
 plugins {
     id 'java'
 }
+apply from: '../config.gradle'
 
 group 'site.weic'
 version 'dev/v0.2-SNAPSHOT'
 
 repositories {
+    maven { url 'https://maven.aliyun.com/repository/public' }
     mavenCentral()
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-}
-
-test {
-    useJUnitPlatform()
+    implementation SpringContextDependency
+    compileOnly LombokDependency
 }
